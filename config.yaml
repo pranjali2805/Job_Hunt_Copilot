@@ -1,0 +1,71 @@
+titles_include:
+  - product manager
+  - associate product
+  - apm
+  - product analyst
+  - product intern
+  - founder
+  - chief of staff
+  - growth
+  - strategy
+  - business operations
+  - bizops
+  - program manager
+
+titles_exclude: [senior, sr, staff, principal, director, head, vp, lead, manager ii, iii]
+
+locations: [mumbai, bengaluru, bangalore, remote, india, hybrid, navi mumbai, pune, hyderabad]
+
+max_years: 2
+threshold: 0
+max_resumes_per_day: 1
+followup_days: 7
+
+# weights for title fit (first match wins; checked in order)
+title_weights:
+  associate product: 1.0
+  apm: 1.0
+  founder: 1.0
+  chief of staff: 0.9
+  growth: 0.9
+
+keywords:
+  - sql
+  - python
+  - api
+  - apis
+  - a/b testing
+  - experimentation
+  - roadmap
+  - prd
+  - user research
+  - funnel
+  - retention
+  - cohort
+  - analytics
+  - dashboard
+  - stakeholder
+  - cross-functional
+  - go-to-market
+  - gtm
+  - growth
+  - kpi
+  - okr
+  - metrics
+  - automation
+  - ai
+  - llm
+  - rag
+  - figma
+  - jira
+  - agile
+  - scrum
+  - excel
+  - power bi
+  - tableau
+  - operations
+  - sales
+  - partnerships
+  - product strategy
+  - user stories
+  - market research

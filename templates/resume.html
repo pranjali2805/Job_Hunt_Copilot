@@ -1,0 +1,111 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10pt;
+      color: #111;
+      line-height: 1.35;
+    }
+
+    h1 {
+      font-size: 18pt;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 11pt;
+      border-bottom: 1px solid #333;
+      margin: 12px 0 4px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .sub {
+      color: #444;
+    }
+
+    ul {
+      margin: 2px 0 6px 16px;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>{{ p.name }}</h1>
+
+  <div class="sub">
+    {{ p.email }} |
+    {{ p.phone }} |
+    {{ p.location }} |
+    {{ p.links | join(' | ') }}
+  </div>
+
+  <h2>Summary</h2>
+  <div>{{ summary }}</div>
+
+  <h2>Skills</h2>
+  <div>{{ skills | join(', ') }}</div>
+
+  {% for label, key in [
+      ('Experience', 'experience'),
+      ('Projects', 'project'),
+      ('Leadership', 'leadership')
+  ] %}
+
+    {% if groups[key] %}
+
+      <h2>{{ label }}</h2>
+
+      {% for e in groups[key] %}
+
+        <div class="row">
+          <b>
+            {{ e.title }}
+            {% if e.org %}, {{ e.org }}{% endif %}
+          </b>
+
+          <span class="sub">{{ e.dates }}</span>
+        </div>
+
+        <ul>
+          {% for b in e.bullets %}
+            <li>{{ b }}</li>
+          {% endfor %}
+        </ul>
+
+      {% endfor %}
+
+    {% endif %}
+
+  {% endfor %}
+
+  <h2>Education</h2>
+
+  {% for s in p.education %}
+
+    <div class="row">
+      <b>{{ s.school }}</b>
+      <span class="sub">{{ s.dates }}</span>
+    </div>
+
+    <div>
+      {{ s.degree }}
+      {% if s.extra %} | {{ s.extra }}{% endif %}
+    </div>
+
+  {% endfor %}
+
+</body>
+</html>
