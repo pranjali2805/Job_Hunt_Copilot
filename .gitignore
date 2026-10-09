@@ -1,0 +1,23 @@
+# Python environment and cache
+.venv/
+__pycache__/
+*.py[cod]
+
+# Private credentials
+.env
+.env.*
+!.env.example
+*.json
+secrets/
+
+# Generated resumes
+output/
+
+# Personal data — never commit these
+profile.yaml
+knowledge_base.yaml
+
+# Editor / OS files
+.vscode/
+.DS_Store
+Thumbs.db
